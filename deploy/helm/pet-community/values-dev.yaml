@@ -1,0 +1,53 @@
+replicaCount: 1
+
+backend:
+  image:
+    repository: pet-community-backend
+    tag: latest
+    pullPolicy: Always
+  
+  service:
+    type: ClusterIP
+    port: 8000
+    targetPort: 8000
+  
+  resources:
+    limits:
+      cpu: 250m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  
+  env:
+    PYTHONUNBUFFERED: "1"
+
+frontend:
+  image:
+    repository: pet-community-frontend
+    tag: latest
+    pullPolicy: Always
+  
+  service:
+    type: ClusterIP
+    port: 3000
+    targetPort: 3000
+  
+  resources:
+    limits:
+      cpu: 250m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  
+  env:
+    REACT_APP_API_URL: http://backend:8000
+
+ingress:
+  enabled: false
+
+namespace: pet-community
+
+autoscaling:
+  enabled: false

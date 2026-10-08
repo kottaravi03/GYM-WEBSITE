@@ -1,0 +1,14 @@
+apiVersion: v2
+name: pet-community
+description: A Helm chart for Pet Community Platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - pet
+  - community
+  - fastapi
+  - react
+maintainers:
+  - name: Pet Community Team
+    email: team@petcommunity.com

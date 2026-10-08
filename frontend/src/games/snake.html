@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🐍 Snake Game</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="score-label">Score:</span>
+                    <span class="score-value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">High Score:</span>
+                    <span class="score-value" id="highScore">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div class="game-overlay" id="gameOverlay">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">Game Over!</h2>
+                    <p id="overlayMessage">Final Score: <span id="finalScore">0</span></p>
+                    <button class="btn btn-primary" id="startBtn">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button class="btn btn-primary" id="startBtn2">Start Game</button>
+            <button class="btn btn-secondary" id="pauseBtn">Pause</button>
+            <button class="btn btn-danger" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="game-info">
+            <div class="info-section">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>Use <strong>Arrow Keys</strong> to move the snake</li>
+                    <li>Eat the <strong>red food</strong> to grow and earn points</li>
+                    <li>Avoid hitting the <strong>walls</strong> or <strong>yourself</strong></li>
+                    <li>Each food eaten = <strong>10 points</strong></li>
+                </ul>
+            </div>
+            <div class="info-section">
+                <h3>Game Stats</h3>
+                <ul>
+                    <li>Grid Size: <strong>20x20</strong></li>
+                    <li>Initial Speed: <strong>Normal</strong></li>
+                    <li>Speed increases with score</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="snake.js"></script>
+</body>
+</html>
